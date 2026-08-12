@@ -1,0 +1,62 @@
+In this project, the K-Nearest Neighbors (KNN) classification algorithm is used to predict whether a customer is likely to default on a loan based on their personal and financial information.
+
+K-Nearest Neighbors (KNN) is a supervised machine learning classification algorithm. It predicts the class of a new customer by comparing it with the most similar customers in the training dataset.
+The algorithm calculates the distance between the new customer and all existing customers. It then selects the nearest K neighbors and assigns the class that appears most frequently among them.
+In this project, K = 3 is used.
+
+Interpretation
+Q1. Identify High-Risk Customers.
+Ans-Customers with low credit scores, higher loan amounts, and longer loan terms are more likely to default on their loans. In this dataset, most customers who have credit scores between 620 and 680 and loan amounts between 9 and 13 lakhs are classified as high-risk customers.
+
+Q2. What patterns lead to loan default?
+Ans-The dataset shows several common patterns among customers who default on loans:
+Lower credit scores increase the risk of default.
+Higher loan amounts increase financial burden.
+Longer loan repayment periods are associated with higher default risk.
+Many self-employed customers in this dataset are classified as defaulters.
+Annual income alone does not guarantee that a customer will repay the loan.
+
+Overall, customers with weaker financial profiles are more likely to default.
+
+Q3. How do Credit Score and Income influence predictions?
+Ans-Credit score plays a major role in predicting loan default. Customers with higher credit scores usually have a better repayment history and are therefore considered safer borrowers.
+    Annual income also affects the prediction, but it is not the only deciding factor. A customer with a high income can still default if the credit score is low or the loan amount is too high.
+    Therefore, credit score has a stronger influence than annual income in this dataset.
+
+Q4. Suggest banking policies based on model output.
+Ans-Based on the model predictions, banks can adopt the following policies:
+Approve loans quickly for customers with high credit scores.
+Perform additional verification for customers with low credit scores.
+Reduce the approved loan amount for high-risk applicants.
+Ask for collateral or a guarantor from risky customers.
+Offer lower interest rates to low-risk customers.
+Continuously monitor high-risk borrowers after loan approval.
+
+These policies can help reduce financial losses and improve loan recovery.
+
+Q5. Compare KNN with Decision Trees.
+KNN	Decision Tree
+Uses distance to classify data	Uses decision rules to classify data
+Requires feature scaling	Does not require feature scaling
+Simple to implement	Easy to understand and explain
+Prediction becomes slower for large datasets	Faster prediction after training
+Less interpretable	Highly interpretable
+Comparison:
+
+KNN performs well for small datasets and simple classification tasks. However, Decision Trees are generally preferred in banking because they clearly explain why a customer is classified as high-risk or low-risk. This makes the decision-making process more transparent.
+
+Q6. What happens if LoanAmount dominates distance calculation?
+Ans-KNN calculates the distance between customers using all input features. If the LoanAmount feature dominates the distance calculation because of its scale, the algorithm may ignore other important features such as credit score and annual income.
+As a result, the model may select incorrect nearest neighbors and produce inaccurate predictions.
+To avoid this problem, feature scaling using StandardScaler is applied before training the KNN model. Scaling ensures that all features contribute equally to the distance calculation.
+
+
+Conclusion
+
+This project successfully demonstrates how the K-Nearest Neighbors (KNN) algorithm can be used to predict loan default. The model identifies customers who are likely to default by analyzing factors such as credit score, annual income, loan amount, loan term, age, and employment type.
+The analysis shows that customers with lower credit scores, higher loan amounts, and longer repayment periods have a greater chance of loan default. Feature scaling plays an important role in improving KNN performance because the algorithm is based on distance calculations.
+Overall, KNN is a simple and effective algorithm for loan default prediction on small datasets. However, for real-world banking applications with large datasets, algorithms such as Decision Trees may be preferred because they provide better interpretability and explainable decision-making.
+
+
+
+
